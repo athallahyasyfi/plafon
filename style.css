@@ -942,8 +942,8 @@ ul {
     }
     
     .hero-image-wrapper {
-        aspect-ratio: 16 / 10;
-        max-width: 600px;
+        aspect-ratio: 4 / 5;
+        max-width: 480px;
         margin: 0 auto;
     }
     
@@ -957,8 +957,8 @@ ul {
     }
     
     .about-image-wrapper {
-        aspect-ratio: 16 / 10;
-        max-width: 600px;
+        aspect-ratio: 4 / 5;
+        max-width: 480px;
         margin: 0 auto;
     }
     
@@ -999,8 +999,8 @@ ul {
         grid-row: auto;
     }
     
-    .project-item.masonry-tall .project-image-wrapper {
-        aspect-ratio: 4 / 3;
+    .project-item .project-image-wrapper {
+        aspect-ratio: 1 / 1 !important;
     }
     
     .expertise-item {
