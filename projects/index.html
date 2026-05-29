@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Project & Video Pemasangan - Bunga Mayang Plafon | Jasa Plafon Premium & Interior Ceiling Studio</title>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Lihat galeri pengerjaan plafon premium, video footage, serta perbandingan sebelum & sesudah pengerjaan di Bunga Mayang Plafon | Jasa Plafon Premium & Interior Ceiling Studio.">
+    <meta name="author" content="Bunga Mayang Plafon">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Showcase Project & Video Pemasangan - Bunga Mayang Plafon | Jasa Plafon Premium & Interior Ceiling Studio">
+    <meta property="og:description" content="Lihat galeri pengerjaan plafon premium, video footage, serta perbandingan sebelum & sesudah pengerjaan.">
+    <meta property="og:image" content="../assets/hero_ceiling.png">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Cormorant Garamond (luxury serif) & Inter (clean modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header scrolled">
+        <div class="container navbar-container">
+            <a href="../" class="logo" id="nav-logo">
+                BUNGA MAYANG PLAFON
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../#home" class="nav-link">Home</a>
+                <a href="../products/" class="nav-link">Products</a>
+                <a href="#" class="nav-link active">Projects</a>
+                <a href="../#branches" class="nav-link">Cabang</a>
+                <a href="../#about" class="nav-link">About</a>
+                <a href="../#services" class="nav-link">Services</a>
+                <a href="../#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="../#contact" class="btn btn-outline" id="btn-konsultasi-nav">
+                    Konsultasi
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <nav class="mobile-nav-links">
+            <a href="../#home" class="mobile-nav-link">Home</a>
+            <a href="../products/" class="mobile-nav-link">Products</a>
+            <a href="#" class="mobile-nav-link">Projects</a>
+            <a href="../#branches" class="mobile-nav-link">Cabang</a>
+            <a href="../#about" class="mobile-nav-link">About</a>
+            <a href="../#services" class="mobile-nav-link">Services</a>
+            <a href="../#contact" class="mobile-nav-link">Contact</a>
+            <a href="../#contact" class="btn btn-gold btn-mobile-cta">
+                Konsultasi Sekarang
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: 100px;">
+
+        <!-- Video Showcase Section -->
+        <section class="section video-showcase-section" style="padding: 100px 0 60px 0;">
+            <div class="container">
+                <div class="section-header reveal-element revealed">
+                    <span class="section-label">VIDEO PORTFOLIO</span>
+                    <h1 class="section-title">Footage & Review Pemasangan</h1>
+                    <p style="margin-top: 20px; color: var(--text-muted); font-weight: 300; max-width: 600px;">
+                        Tonton proses pengerjaan tim ahli kami secara presisi, rapi, serta ulasan detail langsung dari hasil pengerjaan proyek interior ceiling.
+                    </p>
+                </div>
+
+                <!-- Video Grid -->
+                <div class="video-grid reveal-element revealed" id="videos-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 40px;">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Photo Gallery Section -->
+        <section class="section project-gallery-section" style="padding: 100px 0;">
+            <div class="container">
+                <div class="section-header reveal-element revealed">
+                    <span class="section-label">COMPLETED PROJECTS</span>
+                    <h2 class="section-title">Galeri Hasil Pengerjaan</h2>
+                </div>
+
+                <!-- Masonry Gallery -->
+                <div class="projects-grid reveal-element revealed" id="projects-gallery-list">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Video Modal Player -->
+    <div class="video-modal" id="video-player-modal">
+        <div class="video-modal-backdrop" id="video-backdrop"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="video-close-btn" aria-label="Close Video Modal">&times;</button>
+            <div class="video-modal-body">
+                <div class="video-iframe-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                    <iframe id="modal-video-iframe" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="../" class="footer-logo">
+                    BUNGA MAYANG
+                </a>
+                <p class="brand-desc">{{footer_desc}}</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="../#home">Home</a></li>
+                    <li><a href="../products/">Products</a></li>
+                    <li><a href="#" class="active">Projects</a></li>
+                    <li><a href="../#branches">Cabang</a></li>
+                    <li><a href="../#about">About</a></li>
+                    <li><a href="../#services">Services</a></li>
+                    <li><a href="../#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+                <ul class="footer-contacts">
+                    <li>
+                        <span class="contact-label">WhatsApp</span>
+                        <a href="https://wa.me/628123456789" class="contact-value">+628123456789</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:contact@bungamayangplafon.com" class="contact-value">contact@bungamayangplafon.com</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Jam Operasional</span>
+                        <span class="contact-value">Senin - Sabtu: 09:00 - 17:00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col address-col">
+                <h4 class="footer-col-title">Office & Studio</h4>
+                <p class="address-text">Jakarta, Indonesia</p>
+
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Bunga Mayang Plafon. All Rights Reserved.</p>
+            <p class="credit">Designed for Modern Architecture & Premium Interiors</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script src="../app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videosList = document.getElementById('videos-list');
+            const projectsGallery = document.getElementById('projects-gallery-list');
+            
+            const videoModal = document.getElementById('video-player-modal');
+            const videoIframe = document.getElementById('modal-video-iframe');
+            const videoClose = document.getElementById('video-close-btn');
+            const videoBackdrop = document.getElementById('video-backdrop');
+
+            // 1. Fetch and render video showcase cards
+            fetch('/assets/data/videos.json')
+                .then(res => res.json())
+                .then(videos => {
+                    videosList.innerHTML = '';
+                    videos.forEach(v => {
+                        const card = document.createElement('div');
+                        card.className = 'video-card reveal-element revealed';
+                        card.innerHTML = `
+                            <div class="video-thumbnail-container" style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; cursor: pointer; box-shadow: 0 12px 30px rgba(0,0,0,0.04);">
+                                <img src="${v.thumbnail}" alt="${v.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" class="video-thumb">
+                                <div class="video-overlay-play" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(31,31,31,0.3); display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                    <div class="play-btn-circle" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(248, 246, 242, 0.9); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+                                        <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--text-main)" style="margin-left: 3px;">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="video-cat-tag" style="position: absolute; top: 16px; left: 16px; background: rgba(0,0,0,0.65); color: white; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;">${v.category}</span>
+                            </div>
+                            <h3 class="video-title" style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; margin-top: 20px; line-height: 1.35; color: var(--text-main);">${v.title}</h3>
+                        `;
+
+                        // Zoom image and scale play button on hover
+                        const container = card.querySelector('.video-thumbnail-container');
+                        container.addEventListener('mouseenter', () => {
+                            card.querySelector('.video-thumb').style.transform = 'scale(1.05)';
+                            card.querySelector('.play-btn-circle').style.transform = 'scale(1.1)';
+                            card.querySelector('.video-overlay-play').style.background = 'rgba(31,31,31,0.4)';
+                        });
+                        container.addEventListener('mouseleave', () => {
+                            card.querySelector('.video-thumb').style.transform = 'scale(1)';
+                            card.querySelector('.play-btn-circle').style.transform = 'scale(1)';
+                            card.querySelector('.video-overlay-play').style.background = 'rgba(31,31,31,0.3)';
+                        });
+
+                        // Click event to open video modal player
+                        container.addEventListener('click', () => {
+                            videoIframe.src = v.video_url;
+                            videoModal.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        });
+
+                        videosList.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    console.error('Error loading video list:', err);
+                    videosList.innerHTML = '<p style="grid-column: span 3; text-align: center; color: var(--text-muted);">Gagal memuat video showcase.</p>';
+                });
+
+            // Close video modal
+            const closeVideoPlayer = () => {
+                videoModal.classList.remove('active');
+                videoIframe.src = '';
+                document.body.style.overflow = '';
+            };
+            videoClose.addEventListener('click', closeVideoPlayer);
+            videoBackdrop.addEventListener('click', closeVideoPlayer);
+
+            // 2. Fetch and render projects list
+            fetch('/assets/data/projects.json')
+                .then(res => res.json())
+                .then(projects => {
+                    projectsGallery.innerHTML = '';
+                    projects.forEach((proj, idx) => {
+                        const item = document.createElement('div');
+                        // Make odd ones masonry tall for dynamic editorial masonry
+                        const isTall = idx % 3 === 0;
+                        item.className = `project-item reveal-element revealed ${isTall ? 'masonry-tall' : ''}`;
+                        
+                        item.innerHTML = `
+                            <div class="project-image-wrapper">
+                                <img src="${proj.image}" alt="${proj.title}" class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-meta">
+                                        <span class="project-category">${proj.category}</span>
+                                        <h3 class="project-name">${proj.title}</h3>
+                                        <span class="project-location">${proj.location}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        projectsGallery.appendChild(item);
+                    });
+                })
+                .catch(err => {
+                    console.error('Error loading project gallery:', err);
+                    projectsGallery.innerHTML = '<p style="grid-column: span 2; text-align: center; color: var(--text-muted);">Gagal memuat galeri project.</p>';
+                });
+
+            // 3. Before/After Interactive Comparison Slider
+            const slider = document.querySelector('.slider-comparison-container');
+            const clipEl = document.querySelector('.after-image-clip');
+            const clipImg = clipEl.querySelector('img');
+            const handle = document.querySelector('.comparison-handle');
+
+            const adjustSliderWidth = () => {
+                const rect = slider.getBoundingClientRect();
+                clipImg.style.width = `${rect.width}px`;
+            };
+            
+            // Adjust on load and resize
+            adjustSliderWidth();
+            window.addEventListener('resize', adjustSliderWidth);
+
+            let isSliding = false;
+
+            const slideMove = (clientX) => {
+                const rect = slider.getBoundingClientRect();
+                let x = clientX - rect.left;
+                
+                // Bounds enforcement
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                
+                const percentage = (x / rect.width) * 100;
+                clipEl.style.width = `${percentage}%`;
+                handle.style.left = `${percentage}%`;
+            };
+
+            // Touch events
+            slider.addEventListener('touchstart', () => isSliding = true);
+            window.addEventListener('touchend', () => isSliding = false);
+            window.addEventListener('touchmove', (e) => {
+                if (!isSliding) return;
+                slideMove(e.touches[0].clientX);
+            });
+
+            // Mouse events
+            slider.addEventListener('mousedown', () => isSliding = true);
+            window.addEventListener('mouseup', () => isSliding = false);
+            window.addEventListener('mousemove', (e) => {
+                if (!isSliding) return;
+                slideMove(e.clientX);
+            });
+        });
+    </script>
+</body>
+
+</html>

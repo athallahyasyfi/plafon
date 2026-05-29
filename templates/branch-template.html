@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{seo_title}}</title>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="{{meta_description}}">
+    <meta name="author" content="Bunga Mayang Plafon">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{seo_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:image" content="{{photo}}">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Cormorant Garamond (luxury serif) & Inter (clean modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="../../style.css">
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{{name}}",
+      "image": "{{photo}}",
+      "telephone": "{{whatsapp_number}}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{address}}",
+        "addressLocality": "{{slug}}",
+        "addressCountry": "ID"
+      },
+      "url": "https://bungamayangplafon.com/branches/{{slug}}",
+      "priceRange": "$$"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header scrolled">
+        <div class="container navbar-container">
+            <a href="../../" class="logo" id="nav-logo">
+                BUNGA MAYANG PLAFON
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../../#home" class="nav-link">Home</a>
+                <a href="../../products/" class="nav-link">Products</a>
+                <a href="../../projects/" class="nav-link">Projects</a>
+                <a href="../../#about" class="nav-link">About</a>
+                <a href="../../#services" class="nav-link">Services</a>
+                <a href="../../#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="../../#contact" class="btn btn-outline" id="btn-konsultasi-nav">
+                    Konsultasi
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <nav class="mobile-nav-links">
+            <a href="../../#home" class="mobile-nav-link">Home</a>
+            <a href="../../products/" class="mobile-nav-link">Products</a>
+            <a href="../../projects/" class="mobile-nav-link">Projects</a>
+            <a href="../../#about" class="mobile-nav-link">About</a>
+            <a href="../../#services" class="mobile-nav-link">Services</a>
+            <a href="../../#contact" class="mobile-nav-link">Contact</a>
+            <a href="../../#contact" class="btn btn-gold btn-mobile-cta">
+                Konsultasi Sekarang
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: 100px;">
+
+        <!-- Branch Hero Section -->
+        <section class="section branch-hero-section" style="padding: 100px 0 60px 0;">
+            <div class="container">
+                <div class="reveal-element revealed">
+                    <span class="section-label">CABANG RESMI</span>
+                    <h1 class="section-title" style="margin-bottom: 20px;">{{name}}</h1>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); font-weight: 300; max-width: 800px;">{{address}}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branch Info & Map Grid -->
+        <section class="section branch-details-section" style="padding: 0 0 100px 0; background-color: var(--bg-primary);">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start;">
+                <!-- Info Left -->
+                <div class="reveal-element revealed" style="display: flex; flex-direction: column; gap: 40px;">
+                    <div style="border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 10; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                        <img src="{{photo}}" alt="{{name}}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                    <div style="background-color: var(--bg-secondary); padding: 40px; border-radius: 16px;">
+                        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 24px; color: var(--text-main);">Informasi Hubung</h3>
+                        <ul style="display: flex; flex-direction: column; gap: 20px;">
+                            <li>
+                                <span class="contact-label" style="opacity: 0.5;">Alamat Lengkap</span>
+                                <span class="contact-value" style="font-size: 1rem; font-weight: 300;">{{address}}</span>
+                            </li>
+                            <li>
+                                <span class="contact-label" style="opacity: 0.5;">Penanggung Jawab</span>
+                                <span class="contact-value" style="font-size: 1rem; font-weight: 300;">{{contact_person}}</span>
+                            </li>
+                            <li>
+                                <span class="contact-label" style="opacity: 0.5;">Jam Operasional</span>
+                                <span class="contact-value" style="font-size: 1rem; font-weight: 300;">Senin - Sabtu: 09:00 - 17:00</span>
+                            </li>
+                        </ul>
+
+                        <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 16px;">
+                            <a href="https://wa.me/{{whatsapp_number}}?text={{whatsapp_text}}" class="btn btn-gold" style="width: 100%; padding: 14px 20px;">
+                                Hubungi via WhatsApp
+                            </a>
+                            <a href="{{maps_link}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; padding: 14px 20px;">
+                                Rute Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Right -->
+                <div class="reveal-element revealed">
+                    <h3 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 400; margin-bottom: 30px; color: var(--text-main);">Lokasi Google Maps</h3>
+                    <div class="maps-container" style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 20px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.03);">
+                        <iframe src="{{maps_embed_url}}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Gallery Showcase -->
+        <section class="section branch-gallery-section" style="padding: 100px 0; background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header reveal-element revealed">
+                    <span class="section-label">PORTFOLIO LOKAL</span>
+                    <h2 class="section-title">Hasil Kerja Cabang {{slug}}</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px;" class="reveal-element revealed">
+                    {{local_gallery_html}}
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="../../" class="footer-logo">
+                    BUNGA MAYANG
+                </a>
+                <p class="brand-desc">Spesialis pemasangan plafon premium PVC, gypsum, dan interior finishing dengan jaminan kerapian berestetika tinggi untuk hunian mewah Anda.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="../../#home">Home</a></li>
+                    <li><a href="../../products/">Products</a></li>
+                    <li><a href="../../projects/">Projects</a></li>
+                    <li><a href="../../#about">About</a></li>
+                    <li><a href="../../#services">Services</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+                <ul class="footer-contacts">
+                    <li>
+                        <span class="contact-label">WhatsApp</span>
+                        <a href="https://wa.me/{{whatsapp_number}}" class="contact-value">{{whatsapp_number}}</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">contact@bungamayangplafon.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-label">Jam Operasional</span>
+                        <span class="contact-value">Senin - Sabtu: 09:00 - 17:00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col address-col">
+                <h4 class="footer-col-title">Office & Studio</h4>
+                <p class="address-text">Jakarta, Indonesia</p>
+
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Bunga Mayang Plafon. All Rights Reserved.</p>
+            <p class="credit">Designed for Modern Architecture & Premium Interiors</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script src="../../app.js"></script>
+</body>
+
+</html>

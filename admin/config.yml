@@ -1,0 +1,184 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+
+  # ─────────────────────────────────────────────
+  # KONTEN & DATA
+  # ─────────────────────────────────────────────
+
+  - name: "products"
+    label: "🗂 Produk Plafon"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "code"
+    summary: "{{name}} ({{code}})"
+    fields:
+      - { label: "Nama Produk", name: "name", widget: "string" }
+      - { label: "Kode Produk", name: "code", widget: "string" }
+      - { label: "Foto Produk", name: "image", widget: "image" }
+      - { label: "Custom Pesan WhatsApp", name: "whatsapp", widget: "string", required: false, hint: "Opsional. Jika kosong, memakai pesan default." }
+
+  - name: "projects"
+    label: "🖼 Galeri Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title}} — {{location}}"
+    fields:
+      - { label: "Judul Project", name: "title", widget: "string" }
+      - { label: "Kategori Pengerjaan", name: "category", widget: "string", hint: "Contoh: Gypsum Cove Ceiling, Modern Flat Gypsum" }
+      - { label: "Lokasi Project", name: "location", widget: "string", hint: "Contoh: Menteng, Jakarta" }
+      - { label: "Foto Project", name: "image", widget: "image" }
+
+  - name: "videos"
+    label: "🎬 Video Portofolio"
+    folder: "content/videos"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title}}"
+    fields:
+      - { label: "Judul Video", name: "title", widget: "string" }
+      - { label: "URL Video YouTube", name: "video_url", widget: "string", hint: "Paste URL apapun: youtu.be/..., youtube.com/watch?v=..., youtube.com/shorts/... — akan otomatis dikonversi saat build." }
+      - { label: "Thumbnail Video", name: "thumbnail", widget: "image" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Installation Footage", "Project Review", "Testimonial Customer"] }
+
+  - name: "branches"
+    label: "📍 Cabang Kantor"
+    folder: "content/branches"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{name}}"
+    fields:
+      - { label: "Nama Cabang", name: "name", widget: "string" }
+      - { label: "Slug URL", name: "slug", widget: "string", hint: "Contoh: cikarang, karawang, bekasi (huruf kecil, tanpa spasi)" }
+      - { label: "Foto Cabang", name: "photo", widget: "image" }
+      - { label: "Alamat Lengkap", name: "address", widget: "string" }
+      - { label: "Google Maps Embed URL", name: "maps_embed_url", widget: "string", hint: "Salin link iframe src dari Google Maps > Share > Embed." }
+      - { label: "Google Maps Direct Link", name: "maps_link", widget: "string", hint: "Link langsung untuk tombol 'Lihat di Maps'." }
+      - { label: "Nomor WhatsApp Cabang", name: "whatsapp_number", widget: "string", hint: "Format internasional, contoh: +628123456789" }
+      - { label: "Pesan Pembuka WhatsApp", name: "whatsapp_text", widget: "string" }
+      - { label: "Penanggung Jawab / CP", name: "contact_person", widget: "string" }
+      - { label: "SEO Title Halaman Cabang", name: "seo_title", widget: "string" }
+      - { label: "Meta Description Cabang", name: "meta_description", widget: "text" }
+      - { label: "Gallery Project Cabang", name: "local_gallery", widget: "list", field: { label: "Foto", name: "image", widget: "image" } }
+
+  # ─────────────────────────────────────────────
+  # PENGATURAN & KONTEN HALAMAN
+  # ─────────────────────────────────────────────
+
+  - name: "settings"
+    label: "⚙️ Pengaturan Situs"
+    delete: false
+    editor:
+      preview: false
+    files:
+
+      - file: "content/settings.json"
+        label: "Kontak, Footer & SEO"
+        name: "site_settings"
+        fields:
+          - { label: "Nama Situs (SEO Title)", name: "site_title", widget: "string" }
+          - { label: "Deskripsi SEO Default", name: "meta_description", widget: "text" }
+          - { label: "Deskripsi Footer", name: "footer_desc", widget: "text" }
+          - label: "─── Kontak ───"
+            name: "divider_kontak"
+            widget: "hidden"
+            default: ""
+          - { label: "Email Kantor", name: "contact_email", widget: "string" }
+          - { label: "WhatsApp Utama", name: "contact_whatsapp", widget: "string", hint: "Format: +628123456789" }
+          - { label: "Alamat Studio Utama", name: "address", widget: "string" }
+          - { label: "Jam Operasional", name: "jam_operasional", widget: "string", hint: "Contoh: Senin - Sabtu: 09:00 - 17:00" }
+
+      - file: "content/homepage.json"
+        label: "Halaman Depan (Homepage)"
+        name: "homepage_content"
+        fields:
+          - label: "── Hero Section ──"
+            name: "divider_hero"
+            widget: "hidden"
+            default: ""
+          - { label: "Hero Label Kecil", name: "hero_small_label", widget: "string" }
+          - { label: "Hero Judul Utama", name: "hero_title", widget: "string" }
+          - { label: "Hero Subjudul", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero Gambar Utama", name: "hero_image", widget: "image" }
+
+          - label: "── About Section ──"
+            name: "divider_about"
+            widget: "hidden"
+            default: ""
+          - { label: "About Label", name: "about_label", widget: "string" }
+          - { label: "About Judul", name: "about_title", widget: "string" }
+          - { label: "About Paragraf 1", name: "about_text_1", widget: "text" }
+          - { label: "About Paragraf 2", name: "about_text_2", widget: "text" }
+          - { label: "About Gambar", name: "about_image", widget: "image" }
+
+          - label: "── Layanan ──"
+            name: "divider_services"
+            widget: "hidden"
+            default: ""
+          - { label: "Services Label", name: "services_label", widget: "string" }
+          - { label: "Services Judul", name: "services_title", widget: "string" }
+          - label: "Daftar Layanan"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Nama Layanan", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "desc", widget: "text" }
+
+          - label: "── Featured Projects ──"
+            name: "divider_fp"
+            widget: "hidden"
+            default: ""
+          - label: "Featured Projects (Selected Works)"
+            name: "featured_projects"
+            widget: "list"
+            fields:
+              - { label: "Gambar Project", name: "image", widget: "image" }
+              - { label: "Nama Project", name: "name", widget: "string" }
+              - { label: "Lokasi", name: "location", widget: "string" }
+
+          - label: "── CTA Section ──"
+            name: "divider_cta"
+            widget: "hidden"
+            default: ""
+          - { label: "CTA Label", name: "cta_label", widget: "string" }
+          - { label: "CTA Judul", name: "cta_title", widget: "string" }
+          - { label: "CTA Subjudul", name: "cta_subtitle", widget: "text" }
+
+      - file: "content/pages.json"
+        label: "Teks Halaman Products & Projects"
+        name: "pages_content"
+        fields:
+          - label: "── Halaman Products ──"
+            name: "divider_prod"
+            widget: "hidden"
+            default: ""
+          - { label: "Products Label Kecil", name: "products_label", widget: "string" }
+          - { label: "Products Judul", name: "products_title", widget: "string" }
+          - { label: "Products Subjudul", name: "products_subtitle", widget: "text" }
+
+          - label: "── Halaman Projects ──"
+            name: "divider_proj"
+            widget: "hidden"
+            default: ""
+          - { label: "Projects Label Kecil", name: "projects_label", widget: "string" }
+          - { label: "Projects Judul", name: "projects_title", widget: "string" }
+          - { label: "Projects Subjudul", name: "projects_subtitle", widget: "text" }
+          - { label: "Galeri Project Label", name: "projects_gallery_label", widget: "string" }
+          - { label: "Galeri Project Judul", name: "projects_gallery_title", widget: "string" }

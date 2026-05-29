@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Motif Plafon PVC Premium - {{site_title}}</title>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Temukan koleksi lengkap motif plafon PVC premium di {{site_title}}. Pilihan terbaik untuk hunian mewah Anda.">
+    <meta name="author" content="Bunga Mayang Plafon">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Katalog Motif Plafon PVC Premium - {{site_title}}">
+    <meta property="og:description" content="Temukan koleksi lengkap motif plafon PVC premium.">
+    <meta property="og:image" content="../assets/hero_ceiling.png">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Cormorant Garamond (luxury serif) & Inter (clean modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header scrolled">
+        <div class="container navbar-container">
+            <a href="../" class="logo" id="nav-logo">
+                BUNGA MAYANG PLAFON
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="../#home" class="nav-link">Home</a>
+                <a href="#" class="nav-link active">Products</a>
+                <a href="../projects/" class="nav-link">Projects</a>
+                <a href="../#branches" class="nav-link">Cabang</a>
+                <a href="../#about" class="nav-link">About</a>
+                <a href="../#services" class="nav-link">Services</a>
+                <a href="../#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="../#contact" class="btn btn-outline" id="btn-konsultasi-nav">
+                    Konsultasi
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <nav class="mobile-nav-links">
+            <a href="../#home" class="mobile-nav-link">Home</a>
+            <a href="#" class="mobile-nav-link">Products</a>
+            <a href="../projects/" class="mobile-nav-link">Projects</a>
+            <a href="../#branches" class="mobile-nav-link">Cabang</a>
+            <a href="../#about" class="mobile-nav-link">About</a>
+            <a href="../#services" class="mobile-nav-link">Services</a>
+            <a href="../#contact" class="mobile-nav-link">Contact</a>
+            <a href="../#contact" class="btn btn-gold btn-mobile-cta">
+                Konsultasi Sekarang
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main style="padding-top: 100px;">
+
+        <!-- Products Section -->
+        <section class="section products-page-section" style="padding: 100px 0;">
+            <div class="container">
+                <div class="section-header reveal-element revealed">
+                    <span class="section-label">{{products_label}}</span>
+                    <h1 class="section-title">{{products_title}}</h1>
+                    <p style="margin-top: 20px; color: var(--text-muted); font-weight: 300; max-width: 600px;">
+                        {{products_subtitle}}
+                    </p>
+                </div>
+
+                <!-- Search & Toolbar -->
+                <div class="products-toolbar reveal-element revealed" style="margin-bottom: 50px; display: flex; justify-content: flex-end; align-items: center; gap: 30px; flex-wrap: wrap;">
+                    <!-- Search Input -->
+                    <div class="search-wrapper" style="position: relative; max-width: 320px; width: 100%;">
+                        <input type="text" id="product-search" placeholder="Cari kode atau nama motif..." style="width: 100%; padding: 12px 20px; border-radius: 4px; border: 1px solid var(--border-color); background-color: var(--white); font-family: var(--font-sans); font-size: 0.9rem; color: var(--text-main); transition: var(--transition-fast);">
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="products-grid-catalog reveal-element revealed" id="products-catalog-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 40px;">
+                    <!-- Dynamic rendering via JavaScript -->
+                </div>
+                
+                <!-- Empty State -->
+                <div id="no-products-msg" style="display: none; text-align: center; padding: 60px 0; font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-muted); font-weight: 300;">
+                    Motif plafon tidak ditemukan. Silakan gunakan kata kunci lain.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Product Details Modal (Popup) -->
+    <div class="product-modal" id="product-details-modal">
+        <div class="product-modal-backdrop" id="modal-backdrop"></div>
+        <div class="product-modal-content">
+            <button class="product-modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+            <div class="product-modal-body" id="modal-body-content">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="../" class="footer-logo">
+                    BUNGA MAYANG
+                </a>
+                <p class="brand-desc">{{footer_desc}}</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="../#home">Home</a></li>
+                    <li><a href="#" class="active">Products</a></li>
+                    <li><a href="../projects/">Projects</a></li>
+                    <li><a href="../#branches">Cabang</a></li>
+                    <li><a href="../#about">About</a></li>
+                    <li><a href="../#services">Services</a></li>
+                    <li><a href="../#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+                <ul class="footer-contacts">
+                    <li>
+                        <span class="contact-label">WhatsApp</span>
+                        <a href="https://wa.me/{{contact_whatsapp_clean}}" class="contact-value">{{contact_whatsapp}}</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:{{contact_email}}" class="contact-value">{{contact_email}}</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Jam Operasional</span>
+                        <span class="contact-value">{{jam_operasional}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col address-col">
+                <h4 class="footer-col-title">Office & Studio</h4>
+                <p class="address-text">{{address}}</p>
+
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p class="copyright">&copy; 2026 Bunga Mayang Plafon. All Rights Reserved.</p>
+            <p class="credit">Designed for Modern Architecture & Premium Interiors</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script src="../app.js"></script>
+    <script>
+        // Dedicated Product Catalog Client Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const productList = document.getElementById('products-catalog-list');
+            const searchInput = document.getElementById('product-search');
+            const noProductsMsg = document.getElementById('no-products-msg');
+            const modal = document.getElementById('product-details-modal');
+            const modalClose = document.getElementById('modal-close-btn');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const modalBody = document.getElementById('modal-body-content');
+
+            let allProducts = [];
+            let searchQuery = '';
+            let siteSettings = {};
+
+            // Fetch site configurations
+            fetch('/content/settings.json')
+                .then(res => res.json())
+                .then(settings => {
+                    siteSettings = settings;
+                })
+                .catch(err => console.warn('Could not load settings:', err));
+
+            // Load motif list from consolidated JSON
+            fetch('/assets/data/products.json')
+                .then(res => res.json())
+                .then(data => {
+                    allProducts = data;
+                    renderProducts();
+                })
+                .catch(err => {
+                    console.error('Error fetching products catalog:', err);
+                    productList.innerHTML = '<p style="grid-column: span 3; text-align: center; color: var(--text-muted);">Gagal memuat produk. Silakan coba beberapa saat lagi.</p>';
+                });
+
+            // Search logic
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                renderProducts();
+            });
+
+            // Close modal events
+            modalClose.addEventListener('click', closeModal);
+            modalBackdrop.addEventListener('click', closeModal);
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openModal(product) {
+                const waNumber = (siteSettings.contact_whatsapp || '+628123456789').replace(/[^0-9]/g, '');
+                const defaultMsg = `Halo Bunga Mayang Plafon, saya tertarik dengan motif PVC Code ${product.code} (${product.name}). Bisa tolong berikan informasi harga dan konsultasi?`;
+                const customWaText = encodeURIComponent(product.whatsapp || defaultMsg);
+
+                modalBody.innerHTML = `
+                    <div class="product-modal-grid">
+                        <div class="product-modal-visual">
+                            <img src="${product.image}" alt="${product.name}" class="product-modal-img">
+                        </div>
+                        <div class="product-modal-info">
+                            <span class="product-modal-cat">${product.category}</span>
+                            <h2 class="product-modal-title">${product.name}</h2>
+                            <div class="product-modal-meta">
+                                <div class="meta-row">
+                                    <span class="meta-label">Kode Motif:</span>
+                                    <span class="meta-val code-highlight">${product.code}</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Bahan Dasar:</span>
+                                    <span class="meta-val">Polyvinyl Chloride (PVC) Premium</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Ketebalan:</span>
+                                    <span class="meta-val">8 mm</span>
+                                </div>
+                                <div class="meta-row">
+                                    <span class="meta-label">Keunggulan:</span>
+                                    <span class="meta-val">Anti Air, Tahan Rayap, Tidak Merambat Api, Mudah Dibersihkan</span>
+                                </div>
+                            </div>
+                            <div class="product-modal-actions">
+                                <a href="https://wa.me/${waNumber}?text=${customWaText}" target="_blank" rel="noopener noreferrer" class="btn btn-gold modal-wa-cta">
+                                    Tanya Harga & Pemasangan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function renderProducts() {
+                // Filter and search computation
+                const filtered = allProducts.filter(p => {
+                    const matchSearch = p.name.toLowerCase().includes(searchQuery) || p.code.toLowerCase().includes(searchQuery);
+                    return matchSearch;
+                });
+
+                productList.innerHTML = '';
+
+                if (filtered.length === 0) {
+                    noProductsMsg.style.display = 'block';
+                    return;
+                }
+
+                noProductsMsg.style.display = 'none';
+
+                filtered.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card reveal-element revealed';
+                    card.innerHTML = `
+                        <div class="product-image-container">
+                            <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy">
+                            <div class="product-card-overlay">
+                                <button class="btn btn-outline btn-quickview">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info-container">
+                            <span class="product-card-category">${p.category}</span>
+                            <div class="product-header-row">
+                                <h3 class="product-card-title">${p.name}</h3>
+                                <span class="product-card-code">${p.code}</span>
+                            </div>
+                        </div>
+                    `;
+
+                    // Bind click for Quick View modal
+                    card.querySelector('.btn-quickview').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openModal(p);
+                    });
+                    
+                    card.addEventListener('click', () => {
+                        openModal(p);
+                    });
+
+                    productList.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

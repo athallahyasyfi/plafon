@@ -88,9 +88,9 @@
         <section id="home" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-content reveal-element">
-                    <span class="small-label">BUNGA MAYANG PLAFON</span>
-                    <h1 class="hero-title">Detail Plafon Modern untuk Hunian Elegan</h1>
-                    <p class="hero-subtitle">Bunga Mayang Plafon menghadirkan solusi plafon PVC, gypsum, dan decorative ceiling dengan material berkualitas serta pengerjaan profesional untuk rumah, ruko, kantor, hingga interior modern premium.</p>
+                    <span class="small-label">{{hero_small_label}}</span>
+                    <h1 class="hero-title">{{hero_title}}</h1>
+                    <p class="hero-subtitle">{{hero_subtitle}}</p>
 
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-gold" id="btn-hero-cta">
@@ -104,7 +104,7 @@
 
                 <div class="hero-visual reveal-element">
                     <div class="hero-image-wrapper">
-                        <img src="/assets/uploads/screenshot-2026-05-29-235737.png" alt="Plafon Gypsum Modern Minimalis dengan Cove Lighting"
+                        <img src="{{hero_image}}" alt="Plafon Gypsum Modern Minimalis dengan Cove Lighting"
                             class="hero-image">
                     </div>
                 </div>
@@ -121,61 +121,7 @@
 
                 <!-- Editorial Masonry Grid -->
                 <div class="projects-grid">
-                    
-                    <!-- Project 1 -->
-                    <div class="project-item reveal-element masonry-tall">
-                        <div class="project-image-wrapper">
-                            <img src="/assets/uploads/chatgpt-image-may-30-2026-06_50_10-am.png" alt="-" class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-meta">
-<<<<<<< HEAD
-                                    <span class="project-category">Gypsum Cove Ceiling</span>
-                                    <h3 class="project-name">The Oasis Penthouse</h3>
-                                    <span class="project-location">*</span>
-=======
-                                    <h3 class="project-name">-</h3>
-                                    <span class="project-location">-</span>
->>>>>>> a9ec9ae (feat: full site update - CMS, build system, responsive fixes, all pages)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="project-item reveal-element">
-                        <div class="project-image-wrapper">
-                            <img src="/assets/uploads/screenshot-2026-05-30-064840.png" alt="-" class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-meta">
-<<<<<<< HEAD
-                                    <span class="project-category">Modern Flat Gypsum</span>
-                                    <h3 class="project-name">Minimalist Pavilion</h3>
-                                    <span class="project-location">*</span>
-=======
-                                    <h3 class="project-name">-</h3>
-                                    <span class="project-location">-</span>
->>>>>>> a9ec9ae (feat: full site update - CMS, build system, responsive fixes, all pages)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="project-item reveal-element">
-                        <div class="project-image-wrapper">
-                            <img src="/assets/uploads/screenshot-2026-05-30-000408.png" alt="-" class="project-image">
-                            <div class="project-overlay">
-                                <div class="project-meta">
-<<<<<<< HEAD
-                                    <span class="project-category">Decorative Molding & Trim</span>
-                                    <h3 class="project-name">Symphony Master Suite</h3>
-                                    <span class="project-location">*</span>
-=======
-                                    <h3 class="project-name">-</h3>
-                                    <span class="project-location">-</span>
->>>>>>> a9ec9ae (feat: full site update - CMS, build system, responsive fixes, all pages)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{featured_projects_html}}
                 </div>
             </div>
         </section>
@@ -185,19 +131,19 @@
             <div class="container about-container">
                 <div class="about-visual reveal-element">
                     <div class="about-image-wrapper">
-                        <img src="/assets/uploads/screenshot-2026-05-30-000119.png" alt="Proses detail finishing plafon premium"
+                        <img src="{{about_image}}" alt="Proses detail finishing plafon premium"
                             class="about-image">
                     </div>
                 </div>
 
                 <div class="about-content reveal-element">
-                    <span class="section-label">TENTANG KAMI</span>
-                    <h2 class="section-title">Solusi Interior Ceiling Modern dengan Pengerjaan Profesional</h2>
+                    <span class="section-label">{{about_label}}</span>
+                    <h2 class="section-title">{{about_title}}</h2>
 
                     <div class="about-text">
-                        <p>Bunga Mayang Plafon merupakan distributor dan jasa pemasangan plafon PVC, gypsum, wall panel, serta decorative ceiling yang melayani berbagai kebutuhan interior hunian maupun bangunan komersial dengan hasil rapi dan modern.</p>
+                        <p>{{about_text_1}}</p>
 
-                        <p>Didukung material berkualitas, tenaga berpengalaman, dan beberapa cabang layanan, kami berkomitmen menghadirkan plafon yang estetik, tahan lama, serta sesuai dengan konsep interior masa kini.</p>
+                        <p>{{about_text_2}}</p>
                     </div>
                 </div>
             </div>
@@ -207,12 +153,12 @@
         <section id="services" class="section expertise-section">
             <div class="container">
                 <div class="section-header reveal-element">
-                    <span class="section-label">LAYANAN KAMI</span>
-                    <h2 class="section-title">Produk & Layanan Interior Ceiling</h2>
+                    <span class="section-label">{{services_label}}</span>
+                    <h2 class="section-title">{{services_title}}</h2>
                 </div>
 
                 <div class="expertise-list">
-                    <p style="text-align: center; font-weight: 300; opacity: 0.5; padding: 40px 0;">Belum ada detail layanan.</p>
+                    {{services_html}}
                 </div>
             </div>
         </section>
@@ -233,9 +179,9 @@
         <!-- CTA Section -->
         <section id="contact" class="cta-section">
             <div class="container cta-container reveal-element">
-                <span class="small-label light">KONSULTASI INTERIOR</span>
-                <h2 class="cta-title">Konsultasikan Kebutuhan Plafon & Interior Anda Bersama Kami</h2>
-                <p class="cta-subtitle">Tim Bunga Mayang Plafon siap membantu memberikan rekomendasi material, desain plafon, hingga estimasi pemasangan sesuai kebutuhan hunian maupun proyek Anda.</p>
+                <span class="small-label light">{{cta_label}}</span>
+                <h2 class="cta-title">{{cta_title}}</h2>
+                <p class="cta-subtitle">{{cta_subtitle}}</p>
 
                 <a href="#" class="btn btn-whatsapp" id="btn-cta-whatsapp">
                     <svg class="whatsapp-icon" viewBox="0 0 24 24" width="24" height="24">
@@ -277,42 +223,23 @@
                 <ul class="footer-contacts">
                     <li>
                         <span class="contact-label">WhatsApp</span>
-                        <a href="https://wa.me/628123456789" class="contact-value">+628123456789</a>
+                        <a href="https://wa.me/{{contact_whatsapp_clean}}" class="contact-value">{{contact_whatsapp}}</a>
                     </li>
                     <li>
                         <span class="contact-label">Email</span>
-                        <a href="mailto:contact@bungamayangplafon.com" class="contact-value">contact@bungamayangplafon.com</a>
+                        <a href="mailto:{{contact_email}}" class="contact-value">{{contact_email}}</a>
                     </li>
                     <li>
                         <span class="contact-label">Jam Operasional</span>
-                        <span class="contact-value">Senin - Sabtu: 09:00 - 17:00</span>
+                        <span class="contact-value">{{jam_operasional}}</span>
                     </li>
                 </ul>
             </div>
 
             <div class="footer-col address-col">
                 <h4 class="footer-col-title">Office & Studio</h4>
-                <p class="address-text">Bandar Lampung, Indonesia</p>
-                <div class="social-links">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-                        </svg>
-                    </a>
-                    <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path
-                                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.41 7.61 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.966 1.406-5.966s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.195.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.62 0 11.988-5.367 11.988-11.987C24.005 5.367 18.636 0 12.017 0z" />
-                        </svg>
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path
-                                d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
-                </div>
+                <p class="address-text">{{address}}</p>
+
             </div>
         </div>
 

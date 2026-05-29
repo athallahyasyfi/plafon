@@ -1,0 +1,6 @@
+# Clean URLs & Rewrites for Bunga Mayang Plafon
+/products            /products/index.html            200
+/projects            /projects/index.html            200
+/branches/cikarang   /branches/cikarang/index.html   200
+/branches/karawang   /branches/karawang/index.html   200
+/branches/bekasi     /branches/bekasi/index.html     200

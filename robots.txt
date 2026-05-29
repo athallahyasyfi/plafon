@@ -1,0 +1,6 @@
+# Robots.txt for Bunga Mayang Plafon
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://bungamayangplafon.com/sitemap.xml
