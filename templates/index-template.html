@@ -251,6 +251,22 @@
 
     <!-- Interactive JavaScript Logic -->
     <script src="app.js"></script>
+
+    <!-- Netlify Identity: redirect invite/recovery/confirmation tokens to /admin/ -->
+    <script>
+        (function () {
+            // Detect Netlify Identity tokens in URL hash and redirect to /admin/
+            const hash = window.location.hash;
+            if (hash && (
+                hash.includes('invite_token=') ||
+                hash.includes('confirmation_token=') ||
+                hash.includes('recovery_token=') ||
+                hash.includes('access_token=')
+            )) {
+                window.location.replace('/admin/' + hash);
+            }
+        })();
+    </script>
 </body>
 
 </html>

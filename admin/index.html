@@ -5,13 +5,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bunga Mayang Plafon Admin Panel</title>
-    <!-- Include Netlify Identity Widget for authentication -->
+    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
-    <!-- Include Decap CMS scripts -->
+    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+        // Disable the signup button — only invited users can access admin
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on('init', function (user) {
+                if (!user) {
+                    // Hide signup option, only show login
+                    window.netlifyIdentity.on('login', function () {
+                        document.location.href = '/admin/';
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
